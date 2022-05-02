@@ -2,12 +2,22 @@ package com.company.eblan;
 
 public class InheritanceAnimal {
     private String type;
-    private String name;
+    protected String name;
     private int age;
     private float weight;
-    boolean isFly;
+    private boolean isFly;
     private boolean isWalk;
     private boolean isSwim;
+
+    public InheritanceAnimal(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
+        this.type = type;
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.isFly = isFly;
+        this.isWalk = isWalk;
+        this.isSwim = isSwim;
+    }
 
     void display() {
         System.out.print(" Type: " + type + " , Name: " + name + " , Age: " + age + " , Weight: " + weight + " , IsFly: " + (isFly ? "yes" : "no"));
@@ -15,100 +25,113 @@ public class InheritanceAnimal {
     }
 }
 
-    class Bird extends InheritanceAnimal {
-        String name1;
-        String area;
-        boolean winterFly;
+class Bird extends InheritanceAnimal {
 
-        public void setName(String name1) {
-            this.name1 = name1;
-        }
+    private String area;
+    private boolean winterFly;
 
-        public void setArea(String area) {
-            this.area = area;
-        }
-
-        public void setWinterFly(boolean winterFly) {
-            this.winterFly = winterFly;
-        }
-
-        public String getArea() {
-            return area;
-        }
-
-        public boolean isWinterFly() {
-            return winterFly;
-        }
-
-        void chirick_chirick() {
-            System.out.println("Chirik-Chirik");
-        }
+    public Bird() {
+        super("Bird", null, 0, 0.0f, true, true, true);
     }
 
-     class Fish extends InheritanceAnimal {
-        String name2;
-        String squama;
-        boolean upStreamSwim;
-
-        public void setName2(String name2) {
-            this.name2 = name2;
-        }
-
-        public void setSquama(String squama) {
-            this.squama = squama;
-        }
-
-        public void setUpStreamSwim(boolean upStreamSwim) {
-            this.upStreamSwim = upStreamSwim;
-        }
-
-        public String getSquama() {
-            return squama;
-        }
-
-        public boolean isUpStreamSwim() {
-            return upStreamSwim;
-        }
-
-        void bul_bul() {
-            System.out.println("Bul-bul");
-        }
-
+    public void setName(String name) {
+        this.name = name;
     }
 
-     class Insect extends InheritanceAnimal {
-        String name3;
-        int wingCount;
-        boolean likeJesus;
-
-        void ggggg() {
-            System.out.println("Ggggg");
-        }
-
-        public void setName3(String name3) {
-            this.name3 = name3;
-        }
-
-        public void setWingCount(int wingCount) {
-            this.wingCount = wingCount;
-        }
-        public void setLikeJesus(boolean likeJesus){
-            this.likeJesus = likeJesus;
-        }
-
-        public int getWingCount() {
-            return wingCount;
-        }
-
-        public boolean isLikeJesus() {
-            return likeJesus;
-        }
+    public void setArea(String area) {
+        this.area = area;
     }
 
+    public void setWinterFly(boolean winterFly) {
+        this.winterFly = winterFly;
+    }
 
-class Main23{
+    public String getArea() {
+        return area;
+    }
+
+    public boolean isWinterFly() {
+        return winterFly;
+    }
+
+    void chirickChirick() {
+        System.out.println("Chirik-Chirik");
+    }
+}
+
+class Fish extends InheritanceAnimal {
+
+    private String squama;
+    private boolean upStreamSwim;
+
+    public Fish() {
+        super("Fish", null, 0, 0.0f, false, false, true);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSquama(String squama) {
+        this.squama = squama;
+    }
+
+    public void setUpStreamSwim(boolean upStreamSwim) {
+        this.upStreamSwim = upStreamSwim;
+    }
+
+    public String getSquama() {
+        return squama;
+    }
+
+    public boolean isUpStreamSwim() {
+        return upStreamSwim;
+    }
+
+    void bulBul() {
+        System.out.println("Bul-bul");
+    }
+
+}
+
+class Insect extends InheritanceAnimal {
+
+    private int wingCount;
+    private boolean likeJesus;
+
+    public Insect() {
+        super("Insect", null, 0, 0.0f, true, true, true);
+    }
+
+    void ggggg() {
+        System.out.println("Ggggg");
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setWingCount(int wingCount) {
+        this.wingCount = wingCount;
+    }
+
+    public void setLikeJesus(boolean likeJesus) {
+        this.likeJesus = likeJesus;
+    }
+
+    public int getWingCount() {
+        return wingCount;
+    }
+
+    public boolean isLikeJesus() {
+        return likeJesus;
+    }
+}
+
+
+class Main23 {
     public static void main(String[] args) {
-        Animal duck = new Animal("Утка", "Утя", 3, 5.8f, true, true, true);
+        InheritanceAnimal duck = new InheritanceAnimal("Утка", "Утя", 3, 5.8f, true, true, true);
         duck.display();
 
         Bird b = new Bird();
@@ -118,19 +141,19 @@ class Main23{
         b.setWinterFly(false);
         System.out.println(b.getArea());
         System.out.println(b.isWinterFly());
-        b.chirick_chirick();
+        b.chirickChirick();
 
         Fish f = new Fish();
-        f.setName2("Сельд");
+        f.setName("Сельд");
         f.display();
         f.setSquama("Крупная");
         f.setUpStreamSwim(true);
         System.out.println(f.getSquama());
         System.out.println(f.isUpStreamSwim());
-        f.bul_bul();
+        f.bulBul();
 
         Insect i = new Insect();
-        i.setName3("Жук Жукыч");
+        i.setName("Жук Жукыч");
         i.display();
         i.setWingCount(4);
         i.setLikeJesus(true);
