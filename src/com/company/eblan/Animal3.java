@@ -20,9 +20,7 @@ public class Animal3 {
         name = s;
     }
 
-    void holiday(int i) {
-        weight += i * 0.1F;
-    }
+
 
     public Animal3(String type, String name) {
         this.type = type;
@@ -107,7 +105,7 @@ class Main3 {
         tiger.display();
 
         Animal3 duck = new Animal3("Утка", "Утя", 3, 5.8f, true, true, true);
-        duck.holiday(5);
+
         duck.rename("Утя-Утя");
         duck.display();
         System.out.println(duck.getAge());

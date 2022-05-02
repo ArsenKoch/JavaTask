@@ -2,7 +2,7 @@ package com.company.eblan;
 
 public class Animal {
     String type;
-  private   String name;
+    String name;
     int age;
     float weight;
     boolean isFly;
