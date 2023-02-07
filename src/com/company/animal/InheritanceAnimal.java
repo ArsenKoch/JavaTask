@@ -1,7 +1,7 @@
-package com.company.eblan;
+package com.company.animal;
 
-public class HeirAnimal {
-    protected String type;
+public class InheritanceAnimal {
+    private final String type;
     protected String name;
     private final int age;
     private final float weight;
@@ -9,7 +9,7 @@ public class HeirAnimal {
     private final boolean isWalk;
     private final boolean isSwim;
 
-    public HeirAnimal(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
+    public InheritanceAnimal(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
         this.type = type;
         this.name = name;
         this.age = age;
@@ -25,12 +25,12 @@ public class HeirAnimal {
     }
 }
 
-class HeirBird extends HeirAnimal {
+class Bird extends InheritanceAnimal {
 
     private String area;
     private boolean winterFly;
 
-    public HeirBird() {
+    public Bird() {
         super("Bird", null, 0, 0.0f, true, true, true);
     }
 
@@ -55,23 +55,15 @@ class HeirBird extends HeirAnimal {
     }
 
     void voiceBird() {
-        System.out.println("Chirik-Chirik");
-    }
-
-    @Override
-    void display() {
-        System.out.print("I am " + type);
-        super.display();
-        System.out.println("Area : " + area + ", Winter Fly: " + winterFly);
+        System.out.println("Chiril-Chiril");
     }
 }
 
-class HeirFish extends HeirAnimal {
-
+class Fish extends InheritanceAnimal {
     private String squamous;
     private boolean upStreamSwim;
 
-    public HeirFish() {
+    public Fish() {
         super("Fish", null, 0, 0.0f, false, false, true);
     }
 
@@ -98,26 +90,19 @@ class HeirFish extends HeirAnimal {
     void bulBul() {
         System.out.println("Bul-bul");
     }
-
-    @Override
-    void display() {
-        System.out.print("I am " + type);
-        super.display();
-        System.out.println("Squamous : " + squamous + ", Up Stream Swim : " + upStreamSwim);
-    }
 }
 
-class HeirInsect extends HeirAnimal {
+class Insect extends InheritanceAnimal {
 
     private int wingCount;
     private boolean likeJesus;
 
-    public HeirInsect() {
+    public Insect() {
         super("Insect", null, 0, 0.0f, true, true, true);
     }
 
-    void ggggg() {
-        System.out.println("G-g-g-g-g");
+    void voiceInsect() {
+        System.out.println("G-g-g-g");
     }
 
     public void setName(String name) {
@@ -139,43 +124,36 @@ class HeirInsect extends HeirAnimal {
     public boolean isLikeJesus() {
         return likeJesus;
     }
-
-    @Override
-    void display() {
-        System.out.print("I am " + type);
-        super.display();
-        System.out.println("Wing Count : " + wingCount + ", Like Jesus: " + likeJesus);
-    }
 }
 
-class MainHeirTask {
+class MainInheritanceTask {
     public static void main(String[] args) {
-        HeirAnimal duck = new HeirAnimal("Duck", "Donald", 3, 5.8f, true, true, true);
+        InheritanceAnimal duck = new InheritanceAnimal("Duck", "Donald", 3, 5.8f, true, true, true);
         duck.display();
 
         Bird b = new Bird();
         b.setName("Bob");
+        b.display();
         b.setArea("On the sea");
         b.setWinterFly(false);
-        b.display();
         System.out.println(b.getArea());
         System.out.println(b.isWinterFly());
         b.voiceBird();
 
         Fish f = new Fish();
-        f.setName("Pile");
+        f.setName("Pike");
+        f.display();
         f.setSquamous("Big");
         f.setUpStreamSwim(true);
-        f.display();
         System.out.println(f.getSquamous());
         System.out.println(f.isUpStreamSwim());
         f.bulBul();
 
         Insect i = new Insect();
-        i.setName("Жук Жукыч");
+        i.setName("Beetle Zhukovsky");
+        i.display();
         i.setWingCount(4);
         i.setLikeJesus(true);
-        i.display();
         System.out.println(i.getWingCount());
         System.out.println(i.isLikeJesus());
         i.voiceInsect();

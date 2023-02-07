@@ -1,4 +1,4 @@
-package com.company.eblan;
+package com.company.animal;
 
 public class AnimalTask1 {
     String type;

@@ -1,4 +1,4 @@
-package com.company.eblan;
+package com.company.animal;
 
 public class AnimalTask3 {
     private final String type;

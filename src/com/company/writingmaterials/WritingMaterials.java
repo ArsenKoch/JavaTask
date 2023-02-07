@@ -1,7 +1,6 @@
-package com.company;
+package com.company.writingmaterials;
 
 public class WritingMaterials {
-    // TODO: 29.04.2022 Add private thing
     String name;
     String color;
     int price;
@@ -9,7 +8,7 @@ public class WritingMaterials {
     boolean canDraw;
 
     void display() {
-        System.out.println("Название: " + name + ", Цвет: " + color + ", Длина: " + length + ", Цена: " + price + ", Умеет рисовать: " + (canDraw ? "Да" : "Нет"));
+        System.out.println("Name: " + name + ", Color: " + color + ", Length: " + length + ", Price: " + price + ", Can draw: " + (canDraw ? "Yes" : "No"));
     }
 
     void replaceRod(String newColor) {
@@ -25,16 +24,16 @@ public class WritingMaterials {
     }
 
     void draw() {
-        if (canDraw) System.out.println(name + " провел линию. Ее цвет - " + color + ".");
-        else System.out.println(name + " не может ничего нарисовать.");
+        if (canDraw) System.out.println(name + " drew a line. Her color - " + color + ".");
+        else System.out.println(name + " can't draw anything.");
     }
 }
 
-class Main4 {
+class MainWritingMaterials {
     public static void main(String[] args) {
         WritingMaterials pen = new WritingMaterials();
-        pen.name = "ручка";
-        pen.color = "Красный";
+        pen.name = "Pen";
+        pen.color = "Red";
         pen.length = 15.6;
         pen.price = 145;
         pen.canDraw = true;
@@ -44,11 +43,11 @@ class Main4 {
         pen.display();
         pen.priceUp(23);
         pen.display();
-        pen.replaceRod("Синий");
+        pen.replaceRod("Blue");
         pen.draw();
 
         WritingMaterials ruler = new WritingMaterials();
-        ruler.name = "линейка";
+        ruler.name = "Ruler";
         ruler.length = 30.0;
         ruler.price = 25;
         ruler.canDraw = false;
