@@ -1,7 +1,7 @@
 package com.company.eblan;
 
-public class Animal3 {
-    private String type;
+public class AnimalTask3 {
+    private final String type;
     private String name;
     private int age;
     private float weight;
@@ -16,25 +16,18 @@ public class Animal3 {
     }
 
 
-    void rename(String s) {
-        name = s;
+    void rename() {
+        name = "Donald Duck";
     }
 
 
-
-    public Animal3(String type, String name) {
+    public AnimalTask3(String type, String name) {
         this.type = type;
         this.name = name;
 
     }
 
-    public Animal3(String type, int age) {
-        this.type = type;
-        this.age = age;
-        name = "No Name";
-    }
-
-    public Animal3(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
+    public AnimalTask3(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
         this.type = type;
         this.name = name;
         this.age = age;
@@ -94,9 +87,9 @@ public class Animal3 {
 
 }
 
-class Main3 {
+class MainTask3 {
     public static void main(String[] args) {
-        Animal3 tiger = new Animal3("тигр", "Артём");
+        AnimalTask3 tiger = new AnimalTask3("Tiger", "Artem");
         tiger.setAge(15);
         tiger.setWeight(300.6f);
         tiger.setSwim(true);
@@ -104,9 +97,9 @@ class Main3 {
         tiger.setFly(false);
         tiger.display();
 
-        Animal3 duck = new Animal3("Утка", "Утя", 3, 5.8f, true, true, true);
+        AnimalTask3 duck = new AnimalTask3("Duck", "Donald", 3, 5.8f, true, true, true);
 
-        duck.rename("Утя-Утя");
+        duck.rename();
         duck.display();
         System.out.println(duck.getAge());
         System.out.println(duck.getName());
@@ -117,4 +110,3 @@ class Main3 {
         System.out.println(duck.isFly());
     }
 }
-

@@ -1,15 +1,15 @@
 package com.company.eblan;
 
-public class OverriddenAnimal {
+public class HeirAnimal {
     protected String type;
     protected String name;
-    private int age;
-    private float weight;
-    private boolean isFly;
-    private boolean isWalk;
-    private boolean isSwim;
+    private final int age;
+    private final float weight;
+    private final boolean isFly;
+    private final boolean isWalk;
+    private final boolean isSwim;
 
-    public OverriddenAnimal(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
+    public HeirAnimal(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
         this.type = type;
         this.name = name;
         this.age = age;
@@ -25,12 +25,12 @@ public class OverriddenAnimal {
     }
 }
 
-class OverriddenBird extends OverriddenAnimal {
+class HeirBird extends HeirAnimal {
 
     private String area;
     private boolean winterFly;
 
-    public OverriddenBird() {
+    public HeirBird() {
         super("Bird", null, 0, 0.0f, true, true, true);
     }
 
@@ -54,7 +54,7 @@ class OverriddenBird extends OverriddenAnimal {
         return winterFly;
     }
 
-    void chirickChirick() {
+    void voiceBird() {
         System.out.println("Chirik-Chirik");
     }
 
@@ -66,12 +66,12 @@ class OverriddenBird extends OverriddenAnimal {
     }
 }
 
-class OverriddenFish extends OverriddenAnimal {
+class HeirFish extends HeirAnimal {
 
-    private String squama;
+    private String squamous;
     private boolean upStreamSwim;
 
-    public OverriddenFish() {
+    public HeirFish() {
         super("Fish", null, 0, 0.0f, false, false, true);
     }
 
@@ -79,16 +79,16 @@ class OverriddenFish extends OverriddenAnimal {
         this.name = name;
     }
 
-    public void setSquama(String squama) {
-        this.squama = squama;
+    public void setSquamous(String squamous) {
+        this.squamous = squamous;
     }
 
     public void setUpStreamSwim(boolean upStreamSwim) {
         this.upStreamSwim = upStreamSwim;
     }
 
-    public String getSquama() {
-        return squama;
+    public String getSquamous() {
+        return squamous;
     }
 
     public boolean isUpStreamSwim() {
@@ -103,21 +103,21 @@ class OverriddenFish extends OverriddenAnimal {
     void display() {
         System.out.print("I am " + type);
         super.display();
-        System.out.println("Squama : " + squama + ", Up Stream Swim : " + upStreamSwim);
+        System.out.println("Squamous : " + squamous + ", Up Stream Swim : " + upStreamSwim);
     }
 }
 
-class OverriddenInsect extends  OverriddenAnimal{
+class HeirInsect extends HeirAnimal {
 
     private int wingCount;
     private boolean likeJesus;
 
-    public OverriddenInsect() {
+    public HeirInsect() {
         super("Insect", null, 0, 0.0f, true, true, true);
     }
 
     void ggggg() {
-        System.out.println("Ggggg");
+        System.out.println("G-g-g-g-g");
     }
 
     public void setName(String name) {
@@ -148,26 +148,26 @@ class OverriddenInsect extends  OverriddenAnimal{
     }
 }
 
-class Main232 {
+class MainHeirTask {
     public static void main(String[] args) {
-        OverriddenAnimal duck = new OverriddenAnimal("Утка", "Утя", 3, 5.8f, true, true, true);
+        HeirAnimal duck = new HeirAnimal("Duck", "Donald", 3, 5.8f, true, true, true);
         duck.display();
 
         Bird b = new Bird();
         b.setName("Bob");
-        b.setArea("На югах");
+        b.setArea("On the sea");
         b.setWinterFly(false);
         b.display();
         System.out.println(b.getArea());
         System.out.println(b.isWinterFly());
-        b.chirickChirick();
+        b.voiceBird();
 
         Fish f = new Fish();
-        f.setName("Сельд");
-        f.setSquama("Крупная");
+        f.setName("Pile");
+        f.setSquamous("Big");
         f.setUpStreamSwim(true);
         f.display();
-        System.out.println(f.getSquama());
+        System.out.println(f.getSquamous());
         System.out.println(f.isUpStreamSwim());
         f.bulBul();
 
@@ -178,7 +178,6 @@ class Main232 {
         i.display();
         System.out.println(i.getWingCount());
         System.out.println(i.isLikeJesus());
-        i.ggggg();
+        i.voiceInsect();
     }
 }
-

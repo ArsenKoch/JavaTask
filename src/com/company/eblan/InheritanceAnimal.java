@@ -1,13 +1,13 @@
 package com.company.eblan;
 
 public class InheritanceAnimal {
-    private String type;
+    private final String type;
     protected String name;
-    private int age;
-    private float weight;
-    private boolean isFly;
-    private boolean isWalk;
-    private boolean isSwim;
+    private final int age;
+    private final float weight;
+    private final boolean isFly;
+    private final boolean isWalk;
+    private final boolean isSwim;
 
     public InheritanceAnimal(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
         this.type = type;
@@ -54,14 +54,13 @@ class Bird extends InheritanceAnimal {
         return winterFly;
     }
 
-    void chirickChirick() {
-        System.out.println("Chirik-Chirik");
+    void voiceBird() {
+        System.out.println("Chiril-Chiril");
     }
 }
 
 class Fish extends InheritanceAnimal {
-
-    private String squama;
+    private String squamous;
     private boolean upStreamSwim;
 
     public Fish() {
@@ -72,16 +71,16 @@ class Fish extends InheritanceAnimal {
         this.name = name;
     }
 
-    public void setSquama(String squama) {
-        this.squama = squama;
+    public void setSquamous(String squamous) {
+        this.squamous = squamous;
     }
 
     public void setUpStreamSwim(boolean upStreamSwim) {
         this.upStreamSwim = upStreamSwim;
     }
 
-    public String getSquama() {
-        return squama;
+    public String getSquamous() {
+        return squamous;
     }
 
     public boolean isUpStreamSwim() {
@@ -91,7 +90,6 @@ class Fish extends InheritanceAnimal {
     void bulBul() {
         System.out.println("Bul-bul");
     }
-
 }
 
 class Insect extends InheritanceAnimal {
@@ -103,8 +101,8 @@ class Insect extends InheritanceAnimal {
         super("Insect", null, 0, 0.0f, true, true, true);
     }
 
-    void ggggg() {
-        System.out.println("Ggggg");
+    void voiceInsect() {
+        System.out.println("G-g-g-g");
     }
 
     public void setName(String name) {
@@ -128,38 +126,36 @@ class Insect extends InheritanceAnimal {
     }
 }
 
-
-class Main23 {
+class MainInheritanceTask {
     public static void main(String[] args) {
-        InheritanceAnimal duck = new InheritanceAnimal("Утка", "Утя", 3, 5.8f, true, true, true);
+        InheritanceAnimal duck = new InheritanceAnimal("Duck", "Donald", 3, 5.8f, true, true, true);
         duck.display();
 
         Bird b = new Bird();
         b.setName("Bob");
         b.display();
-        b.setArea("На югах");
+        b.setArea("On the sea");
         b.setWinterFly(false);
         System.out.println(b.getArea());
         System.out.println(b.isWinterFly());
-        b.chirickChirick();
+        b.voiceBird();
 
         Fish f = new Fish();
-        f.setName("Сельд");
+        f.setName("Pike");
         f.display();
-        f.setSquama("Крупная");
+        f.setSquamous("Big");
         f.setUpStreamSwim(true);
-        System.out.println(f.getSquama());
+        System.out.println(f.getSquamous());
         System.out.println(f.isUpStreamSwim());
         f.bulBul();
 
         Insect i = new Insect();
-        i.setName("Жук Жукыч");
+        i.setName("Beetle Zhukovsky");
         i.display();
         i.setWingCount(4);
         i.setLikeJesus(true);
         System.out.println(i.getWingCount());
         System.out.println(i.isLikeJesus());
-        i.ggggg();
+        i.voiceInsect();
     }
 }
-
